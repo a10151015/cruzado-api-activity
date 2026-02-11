@@ -32,6 +32,6 @@ Why did I choose to Embed the [Review/Tag/Log]?
 I chose to embed the Review/Tag/Log because these pieces of information are tightly coupled with the main entity they belong to. For example, a Review is specific to a particular recipe or dish, and a Tag is directly tied to the item it describes. Embedding them makes retrieval faster and simpler since they are always accessed together with the parent document. This avoids unnecessary joins or lookups and keeps related data in one place, which is efficient for queries that frequently need the whole object.
 
 Why did I choose to Reference the [Chef/User/Guest]?  
-I chose to reference the Chef/User/Guest because these entities are independent and may be reused across multiple documents. For instance, a single Chef can be associated with many recipes, and a User can leave multiple reviews. By referencing them, I avoid duplicating their information in every related document. This design also makes updates easier—if a Chef’s profile changes, I only need to update it in one place, and all references remain valid.
+I chose to reference the Chef/User/Guest because these entities are independent and may be reused across multiple documents. For instance, a single Chef can be associated with many recipes, and a User can leave multiple reviews. By referencing them, I avoid duplicating their information in every related document. This design also makes updates easier if a Chef’s profile changes, I only need to update it in one place, and all references remain valid.
 
 
