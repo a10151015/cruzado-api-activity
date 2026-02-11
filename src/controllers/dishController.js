@@ -1,4 +1,5 @@
 const Dish = require('../models/dishModel');
+const Chef = require('../models/chefModel');
 
 const getAllDishes = async (req, res) => {
     try {
@@ -53,12 +54,22 @@ const deleteDish = async (req, res) => {
 
     }
 };
+const createChef = async (req, res) => {
+    try {
+        const newChef = new Chef(req.body);
+        const savedChef = await newChef.save();
+        res.status(201).json(savedChef);
+    } catch (error) {
+        res.status(400).json({ message: error.message });
+    }
+};
 
 module.exports = {
     getAllDishes,
     createDish,
     getDishById,
     updateDish,
-    deleteDish, 
+    deleteDish,
+    createChef,  
 };      
         
